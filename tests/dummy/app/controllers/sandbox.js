@@ -1,23 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  task: null,
-  hasBeenToggled: false,
-  allTasks: [{title: 'one'}, {title: 'two'}, {title: 'three'}],
-  tasks: Ember.computed('allTasks', function() {
-    return this.get('allTasks');
+  makes: Ember.computed(function() {
+    return [{name: "Acura"}, {name: "Audi"}, {name: "Bentley"}, {name: "BMW"}, {name: "Ford"}];
   }),
 
-  actions: {
-    changeTask() {
-      this.toggleProperty('hasBeenToggled');
-
-      if (!this.get('hasBeenToggled')) {
-        let tasks = this.get('allTasks');
-        this.set('allTasks', tasks.slice(1));
-      } else {
-        this.get('allTasks').push({title: 'Weeee'});
-      }
+  models: Ember.computed('selectedMake', function() {
+    if (this.get('selectedMake.name') === "Ford") {
+      return [{model: "Focus"}, {model: "Edge"}, {model: "Explorer"}, {model: "GT"}, {model: "Mustang"}]
     }
-  }
+  })
 });

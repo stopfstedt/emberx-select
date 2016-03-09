@@ -1,10 +1,16 @@
-{{#x-select value=task}}
-  {{#x-option value="Default"}}Default{{/x-option}}
-  {{#each tasks as |t|}}
-    {{#x-option value=t}}{{t.title}}{{/x-option}}
-  {{/each}}
-{{/x-select}}
-
-<p>task: {{task.title}}</p>
-
-<p><button {{action "changeTask"}}>Change Tasks</button></p>
+<div>
+  <p>Make:</p>
+  {{#x-select value=selectedMake}}
+    {{#each makes as |make|}}
+      {{#x-option value=make}}{{make.name}}{{/x-option}}
+    {{/each}}
+  {{/x-select}}
+</div>
+<div>
+  <p>Model:</p>
+  {{#x-select value=selectedModel}}
+    {{#each models as |model|}}
+      {{#x-option value=model}}{{model.model}}{{/x-option}}
+    {{/each}}
+  {{/x-select}}
+</div>
