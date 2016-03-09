@@ -1,0 +1,10 @@
+{{#x-select value=task}}
+  {{#x-option value="Default"}}Default{{/x-option}}
+  {{#each tasks as |t|}}
+    {{#x-option value=t}}{{t.title}}{{/x-option}}
+  {{/each}}
+{{/x-select}}
+
+<p>task: {{task.title}}</p>
+
+<p><button {{action "changeTask"}}>Change Tasks</button></p>
