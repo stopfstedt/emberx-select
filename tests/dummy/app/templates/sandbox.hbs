@@ -2,7 +2,7 @@
   <p>Make:</p>
   {{#x-select value=selectedMake}}
     {{#each makes as |make|}}
-      {{#x-option value=make}}{{make.name}}{{/x-option}}
+      {{#x-option value=make}}{{make}}{{/x-option}}
     {{/each}}
   {{/x-select}}
 </div>
@@ -10,7 +10,23 @@
   <p>Model:</p>
   {{#x-select value=selectedModel}}
     {{#each models as |model|}}
-      {{#x-option value=model}}{{model.model}}{{/x-option}}
+      {{#x-option value=model}}{{model}}{{/x-option}}
     {{/each}}
   {{/x-select}}
+</div>
+
+
+<div style="margin-top: 40px">
+  <h3>Issue #98</h3>
+  {{#x-select value=format class="spec-issue-98"}}
+    {{#each formats as |format|}}
+      {{#x-option value=format}}{{format}}{{/x-option}}
+    {{/each}}
+    {{#unless isStreak}}
+      {{#each buildStatesFormats as |format|}}
+        {{#x-option value=format}}{{format}}{{/x-option}}
+      {{/each}}
+    {{/unless}}
+  {{/x-select}}
+  <p><button {{action "toggleStreak"}} class="spec-toggle-streak">Toggle streak</button></p>
 </div>

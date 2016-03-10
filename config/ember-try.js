@@ -1,8 +1,63 @@
 module.exports = {
   scenarios: [
     {
-      name: 'default',
-      dependencies: { }
+      name: 'Ember 1.13.0',
+      // this is a bug in ember. See:
+      //https://github.com/emberjs/ember.js/pull/11651
+      allowedToFail: true,
+      bower: {
+        dependencies: {
+          'ember': '1.13.0'
+        }
+      }
+    },
+    {
+      name: 'Ember 1.13.4',
+      bower: {
+        dependencies: {
+          'ember': '1.13.4'
+        }
+      }
+    },
+    {
+      name: 'Ember 2.0.0',
+      bower: {
+        dependencies: {
+          'ember': '2.0.0'
+        }
+      }
+    },
+    {
+      name: 'Ember 2.1.0',
+      bower: {
+        dependencies: {
+          'ember': '2.1.0'
+        }
+      }
+    },
+    {
+      name: 'Ember 2.2.0',
+      bower: {
+        dependencies: {
+          'ember': '2.2.0'
+        }
+      }
+    },
+    {
+      name: 'Ember 2.3.0',
+      bower: {
+        dependencies: {
+          'ember': '2.3.0'
+        }
+      }
+    },
+    {
+      name: 'Ember 2.4.0',
+      bower: {
+        dependencies: {
+          'ember': '2.4.0'
+        }
+      }
     },
     {
       name: 'ember-release',
@@ -20,15 +75,6 @@ module.exports = {
       },
       resolutions: {
         'ember': 'beta'
-      }
-    },
-    {
-      name: 'ember-canary',
-      dependencies: {
-        'ember': 'components/ember#canary'
-      },
-      resolutions: {
-        'ember': 'canary'
       }
     }
   ]
