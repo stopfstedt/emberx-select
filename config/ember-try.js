@@ -1,17 +1,6 @@
 module.exports = {
   scenarios: [
     {
-      name: 'Ember 1.13.0',
-      // this is a bug in ember. See:
-      //https://github.com/emberjs/ember.js/pull/11651
-      allowedToFail: true,
-      bower: {
-        dependencies: {
-          'ember': '1.13.0'
-        }
-      }
-    },
-    {
       name: 'Ember 1.13.4',
       bower: {
         dependencies: {
