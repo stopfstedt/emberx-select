@@ -16,6 +16,7 @@ Router.map(function() {
     this.route('focus-out');
   });
   this.route('sandbox');
+  this.route('ember-data');
 });
 
 export default Router;
